@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- General -->
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<!-- Package meta -->
+	<PropertyGroup>
+		<Description>A Razor tag helpers library</Description>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<!-- Readme includes -->
+	<ItemGroup>
+		<None Include="readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<!-- buildTransitive includes -->
+	<ItemGroup>
+		<Content Include="buildTransitive\**" PackagePath="buildTransitive" />
+	</ItemGroup>
+	
+	<!-- Framework includes -->
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<!-- Package includes -->
+	<ItemGroup>
+		<PackageReference Include="Rhythm.IO" Version="[1.0.1, 2]" />
+	</ItemGroup>
+
+	<!-- SourceLink includes -->
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+	</ItemGroup>
+</Project>
